@@ -13,6 +13,7 @@ namespace Players
         [SerializeField] private float speed = 10;
         [SerializeField] private float jumpPower = 20;
         private new Rigidbody2D rigidbody2D = null!;
+        [SerializeField] private SpriteRenderer spriteRenderer = null!;
         private IInput input = new PlugInput();
         [SerializeField] private NetworkVariable<float> inputDirection = new(
             0,
@@ -24,12 +25,17 @@ namespace Players
             NetworkVariableReadPermission.Everyone,
             NetworkVariableWritePermission.Owner
         );
+        [SerializeField] private NetworkVariable<Color> currentColor  = new(
+            Color.white,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Owner
+        );
         private readonly Quaternion lookAdditional = Quaternion.Euler(0, -90, 0);
-
 
         private void Awake()
         {
             rigidbody2D = GetComponent<Rigidbody2D>()!;
+            spriteRenderer = GetComponent<SpriteRenderer>()!;
         }
 
 
@@ -39,12 +45,21 @@ namespace Players
             if (IsOwner)
             {
                 input = new KeyboardInput();
+
+                currentColor.Value = Color.green;
+            }
+
+            if (IsServer)
+            {
+                currentColor.Value = Color.red;
             }
         }
 
 
         private void Update()
         {
+            spriteRenderer.color = currentColor.Value;
+
             if (IsOwner)
             {
                 inputDirection.Value = input.Direction();

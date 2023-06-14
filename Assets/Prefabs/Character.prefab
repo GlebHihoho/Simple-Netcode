@@ -242,6 +242,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   jumpPower: 300
+  spriteRenderer: {fileID: 0}
+  inputDirection:
+    m_InternalValue: 0
+  inputJump:
+    m_InternalValue: 0
+  currentColor:
+    m_InternalValue: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &7399198124539014918
 MonoBehaviour:
   m_ObjectHideFlags: 0
