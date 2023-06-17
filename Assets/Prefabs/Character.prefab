@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3300194286682337229}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.05000003, y: -0.6350001, z: 0}
+  m_LocalPosition: {x: -0.04, y: -2.23, z: 0}
   m_LocalScale: {x: 2.4999993, y: 2.4999993, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,6 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8425695965626134364, guid: a697b81a65dbf4e61b61c7628939b637, type: 3}
+  bullets:
+  - {fileID: 8425695965626134364, guid: a697b81a65dbf4e61b61c7628939b637, type: 3}
+  - {fileID: 8425695965626134364, guid: 0df0199f6e5505c428f67587d48b30fb, type: 3}
   shootPoint: {fileID: 363749159780920818}
   spriteRenderer: {fileID: 5548367014669596967}
   currentColor:

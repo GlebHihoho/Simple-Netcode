@@ -13,7 +13,9 @@ namespace Players
     [RequireComponent(typeof(NetworkTransform))]
     public class Player : NetworkBehaviour
     {
-        [Header("Shooting")] [SerializeField] private Bullet bulletPrefab = null!;
+        [Header("Shooting")]
+        [SerializeField] private Bullet bulletPrefab = null!;
+        [SerializeField] private Bullet[] bullets = null!;
         [SerializeField] private Transform shootPoint = null!;
         [Space] [SerializeField] private SpriteRenderer spriteRenderer = null!;
         [SerializeField] private NetworkVariable<Color> currentColor = new(
@@ -86,10 +88,12 @@ namespace Players
         }
 
 
-        [ServerRpc(RequireOwnership = false)]
+        [ServerRpc]
         private void ShootServerRpc()
         {
-            var bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity)!;
+            var randomPrefab = Random.Range(0f, 1f) < 0.8 ? bullets[0] : bullets[1];
+
+            var bullet = Instantiate(randomPrefab, shootPoint.position, Quaternion.identity)!;
             bullet.Spawn(shootPoint.right);
         }
 
