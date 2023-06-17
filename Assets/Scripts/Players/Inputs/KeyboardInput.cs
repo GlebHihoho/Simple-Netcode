@@ -15,5 +15,11 @@ namespace Players
         {
             return Input.GetKeyDown(KeyCode.Space);
         }
+
+
+        public bool Shoot()
+        {
+            return Input.GetKeyDown(KeyCode.R);
+        }
     }
 }

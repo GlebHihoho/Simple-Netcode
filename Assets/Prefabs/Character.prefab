@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3300194286682337229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363749159780920818}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &363749159780920818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300194286682337229}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.04, y: -2.23, z: 0}
+  m_LocalScale: {x: 2.4999993, y: 2.4999993, z: 2.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5548367013792709854}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5548367013792709855
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +59,8 @@ Transform:
   m_LocalPosition: {x: 0.51, y: 0.45, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 363749159780920818}
   m_Father: {fileID: 5548367014669596966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -165,7 +197,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.2971698, g: 0.8014603, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -240,15 +272,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002470baf2d44be6bd8d39f2eb9c5321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8425695965626134364, guid: a697b81a65dbf4e61b61c7628939b637, type: 3}
+  bullets:
+  - {fileID: 8425695965626134364, guid: a697b81a65dbf4e61b61c7628939b637, type: 3}
+  - {fileID: 8425695965626134364, guid: 0df0199f6e5505c428f67587d48b30fb, type: 3}
+  shootPoint: {fileID: 363749159780920818}
+  spriteRenderer: {fileID: 5548367014669596967}
+  currentColor:
+    m_InternalValue: {r: 0.29411766, g: 0.8000001, b: 1, a: 1}
   speed: 1000
   jumpPower: 300
-  spriteRenderer: {fileID: 0}
+  health:
+    m_InternalValue: 100
   inputDirection:
     m_InternalValue: 0
   inputJump:
     m_InternalValue: 0
-  currentColor:
-    m_InternalValue: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &7399198124539014918
 MonoBehaviour:
   m_ObjectHideFlags: 0

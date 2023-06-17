@@ -6,5 +6,8 @@ namespace Players
 
 
         bool Jump();
+
+
+        bool Shoot();
     }
 }
