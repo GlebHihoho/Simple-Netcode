@@ -12,5 +12,11 @@ namespace Players
         {
             return false;
         }
+
+
+        public bool Shoot()
+        {
+            return false;
+        }
     }
 }
